@@ -601,3 +601,432 @@ p strong {
         background-color: #e60000; /* Darker red on hover */
     }
 </style>
+
+
+    
+<section>
+    <h3>Girls, Be Safe—Download Today!
+</h3>
+    <p>Check out these top safety apps for women, offering emergency alerts, location sharing, and quick assistance:</p>
+    
+    <div>
+        <h3>National Emergency Response System (NERS)</h3>
+        <img src="https://play-lh.googleusercontent.com/SlaQFWe85L-RdWaAlH3zjpQFl9AwY0M98GZ3u6kbHmf27hPyulF2oPwHXtX31SDoS1Y=w480-h960-rw" alt="NERS logo" style="width: 100%; height: 160px; object-fit: cover;">
+        <p>Send distress signals and get immediate help from authorities.</p>
+        <a href="https://play.google.com/store/apps/details?id=in.cdac.ners.psa.mobile.android.national" target="_blank">Download</a>
+    </div>
+    
+    <div>
+        <h3>MySafetipin</h3>
+        <img src="https://play-lh.googleusercontent.com/t5pRYwWjwHb9QoQ2jOdAhwVWV_veiwaZtL9w_6RfKJMg3h7JunDD2NDtOcVEMfsxNC0=w480-h960-rw" alt="MySafetipin logo" style="width: 100%; height: 209px; object-fit: cover;">
+        <p>Assess location safety and share your location in emergencies.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.safetipin.mysafetipin" target="_blank">Download</a>
+    </div>
+    
+    <div>
+        <h3>bSafe</h3>
+        <img src="https://play-lh.googleusercontent.com/BD8KS1_0R4bUNBrcguJjPulEVhUgOCxJa-8sgqc2A0NoksOgA66LsexdpIUXYZzZbbnx=w480-h960-rw" alt="bSafe logo" style="width: 100%; height: 155px; object-fit: cover;">
+        <p>Real-time location tracking with SOS alerts for safety.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.bipper.app.bsafe" target="_blank">Download</a>
+    </div>
+    
+    <div>
+        <h3>Life360</h3>
+        <img src="https://play-lh.googleusercontent.com/AxZFJIQK5sr8KXkko0jBH5SolEbpM_8W8q7h3EZNeTNWTeZi-G3kp2OTbrqo--X24H4=w480-h960-rw" alt="Life360 logo" style="width: 100%; height: 178px; object-fit: cover;">
+        <p>Track loved ones' locations and get alerts in emergencies.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.life360.android.safetymapd" target="_blank">Download</a>
+    </div>
+</section>
+
+
+
+
+
+
+<section>
+    <h2>Share this</h2>
+ <img src="https://i.pinimg.com/736x/c9/f7/c0/c9f7c084629c3d89daae6d0f9c82e8c0.jpg" alt="Self-Defense Tips">
+
+    <p>Empower yourself and those you love! Visit my safety website for essential tips on self-defense, reporting incidents, and seeking help. Share this important information with your friends, sisters, and mothers. Together, we can create a safer community!
+
+</p>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<button class="share-button" onclick="copyLink()">
+    <i class="fas fa-share"></i> Share
+</button>
+
+<style>
+.share-button {
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.share-button i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.share-button:hover {
+    background-color: darkviolet;
+}
+</style>
+
+<script>
+function copyLink() {
+    const url = "https://sahilcodelab.github.io/Girl-safety-and-awernes-/"; // Your link
+    const text = "Share female friends!"; // Custom text for sharing
+
+    navigator.clipboard.writeText(url).then(() => {
+        alert("Link copied: " + url);
+    }).catch(err => {
+        console.error('Could not copy link: ', err);
+    });
+
+    if (navigator.share) {
+        navigator.share({
+            title: 'Share your female Friends',
+            text: text,
+            url: url,
+        }).then(() => {
+            console.log('Shared successfully');
+        }).catch((error) => {
+            console.error('Error sharing:', error);
+        });
+    }
+}
+</script>
+</section>
+
+<section class="contact-form">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/xdkoogaj" method="POST" id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <input type="submit" value="Submit">
+        <p id="success-message" style="display:none; color: green;"></p>
+        <p id="error-message" style="display:none; color: red;"></p>
+    </form>
+</section>
+
+<script>
+    const form = document.getElementById('contact-form');
+    const submitButton = form.querySelector('input[type="submit"]');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        successMessage.style.display = 'none'; // Hide success message
+        errorMessage.style.display = 'none'; // Hide error message
+        submitButton.value = 'Sending...'; // Change button text
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                successMessage.textContent = 'Thank you for your message!';
+                successMessage.style.display = 'block'; // Show success message
+                submitButton.value = 'Sent'; // Change button text to 'Sent'
+                form.reset();
+            } else {
+                errorMessage.textContent = 'There was a problem submitting your form. Please try again.';
+                errorMessage.style.display = 'block'; // Show error message
+                submitButton.value = 'Submit'; // Reset button text
+            }
+        }).catch(error => {
+            errorMessage.textContent = 'Network error. Please check your connection.';
+            errorMessage.style.display = 'block'; // Show error message
+            submitButton.value = 'Submit'; // Reset button text
+        });
+    });
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    .social-icons {
+        display: flex;
+        justify-content: center; /* Center alignment */
+        align-items: center;
+        gap: 15px; /* Icons ke beech mein space */
+        margin: 20px 0; /* Top and bottom margin */
+    }
+
+    .icon {
+        font-size: 30px; /* Icon ka size */
+        color: purple; /* Icon ka color */
+        transition: transform 0.2s; /* Animation effect */
+        padding: 10px; /* Padding around icons */
+        border-radius: 50%; /* Rounded corners */
+        background-color: white; /* Background color for icons */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for 3D effect */
+    }
+
+    .icon:hover {
+        transform: scale(1.1); /* Scale on hover */
+    }
+</style>
+
+<div class="social-icons">
+    <a href="https://t.me/Enchanting_Echo" target="_blank" aria-label="Follow on Telegram">
+        <i class="fab fa-telegram-plane icon"></i>
+    </a>
+    <a href="https://twitter.com/NCWIndia" target="_blank" aria-label="Follow on X">
+        <i class="fab fa-x icon"></i>
+    </a>
+    <a href="https://www.facebook.com/@UnitedNationsIndia/" target="_blank" aria-label="Follow on Facebook">
+        <i class="fab fa-facebook icon"></i>
+    </a>
+    <a href="https://www.instagram.com/unwomen?igsh=Z2l4bjE3NXhtZTF1" target="_blank" aria-label="Follow on Instagram">
+        <i class="fab fa-instagram icon"></i>
+    </a>
+</div>
+
+
+<div class="footer">
+    <p>&copy; 2023. All rights reserved.</p>
+    <p> <b>Managed by:</b> <span class="signature">Sahil</span></p>
+    <p>
+        <a href="Terms-&-Conditions.html" style="color: white; text-decoration: none;">Terms & Conditions</a> | 
+        <a href="Privacy-Policy.html" style="color: white; text-decoration: none;">Privacy Policy</a>
+    </p>
+</div>
+
+<style>
+.footer {
+    background-color: #4B0082; /* Purple color */
+    color: white; /* Sets the text color to white */
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px; /* Space between social icons and footer */
+}
+
+.footer p {
+    color: white; /* Ensures all <p> elements have white text */
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive; /* Stylish cursive font for signature */
+    font-size: 2em; /* Size for the signature */
+    color: #37BFFF; /* Gold color for the signature */
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Link to Dancing Script font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+</style>
+    
+        
+    
+<!-- Back to Top Button -->
+<button id="backToTop" title="Go to top">↑ Top</button>
+
+<style>
+    #backToTop {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        bottom: 60px; /* 20px from the bottom */
+        right: 30px; /* 30px from the right */
+        z-index: 99; /* Sit on top */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: #4B0082; /* Purple background */
+        color: white; /* White text */
+        cursor: pointer; /* Pointer/hand icon */
+        padding: 15px; /* Some padding */
+        border-radius: 50px; /* Rounded corners */
+        font-size: 18px; /* Text size */
+    }
+
+    #backToTop:hover {
+        background-color: black; /* Darker background on hover */
+    }
+</style>
+
+<script>
+    let backToTopButton = document.getElementById("backToTop");
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", function() {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Check if the user is scrolling up
+        if (currentScroll < lastScrollTop) {
+            backToTopButton.style.display = "block"; // Show button
+        } else {
+            backToTopButton.style.display = "none"; // Hide button
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    });
+
+    // When the user clicks on the button, scroll to the top of the document with smooth scrolling
+    backToTopButton.onclick = function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Smooth scroll to the top
+        });
+    };
+</script>
+
+
+
+
+
+
+
+
+<!-- Popup Structure -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="hidePopup()">×</span>
+    <img src="https://i.pinimg.com/736x/f0/87/b3/f087b3b2d168e9dcc146d4b741540ebd.jpg" alt="Popup Image" class="popup-image">
+<p class="message">🌸 <strong>Girls' Safety & Awareness</strong> 🌸<br>
+I'm Sahil, and I created this platform to raise awareness about the growing violence against girls in India, especially in states like Uttar Pradesh, Rajasthan, Madhya Pradesh, Maharashtra, and Haryana. Join me in advocating for girls' safety and spreading this mission. Together, we can build a safer world for all.
+
+</p>
+    <button class="popup-button" onclick="hidePopup()">Join the Movement</button>
+  </div>
+</div>
+
+<!-- CSS for Popup -->
+<style>
+  /* Popup overlay */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  /* Popup content */
+  .popup-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    animation: scaleUp 0.5s ease-in-out;
+  }
+
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 10;
+  }
+
+  .close-btn:hover {
+    color: #333;
+  }
+
+  /* Centered Image styling */
+  .popup-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  /* Message text */
+  .message {
+    font-size: 18px;
+    color: #444;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  /* Button styling */
+  .popup-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff4b5c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .popup-button:hover {
+    background-color: #e63946;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Scale-up animation */
+  @keyframes scaleUp {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+  }
+</style>
+
+<!-- JavaScript for Popup -->
+<script>
+  // Function to show the popup
+  function showPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  // Function to hide the popup
+  function hidePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  // Show popup automatically after 5 seconds
+  window.onload = function() {
+    setTimeout(showPopup, 5000); // 5 seconds delay
+  };
+</script>
+
+
+    
